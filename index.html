@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Niraj Mhatre</title>
 
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
 <header>
+
+<div class="hero">
+
+<img src="profile.jpg" class="profile">
+
 <h1>Niraj Mhatre</h1>
-<p>MSc Statistics | IIT Kanpur</p>
+
+<p>MSc Statistics | IIT Kanpur | Data Science & ML</p>
+
+<div class="buttons">
+
+<a href="resume.pdf" class="btn">Download Resume</a>
+
+<a href="mailto:rmhatre25@iitk.ac.in" class="btn">Contact Me</a>
+
+</div>
+
+</div>
+
+</header>
 
 <nav>
+
 <a href="#about">About</a>
-<a href="#education">Education</a>
 <a href="#projects">Projects</a>
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
-</nav>
 
-</header>
+</nav>
 
 <section id="about">
 
 <h2>About Me</h2>
 
 <p>
-I am a first-year MSc Statistics student at IIT Kanpur with interests in
-Machine Learning, Data Science, and Statistical Modeling. My work focuses on
-combining statistical theory with modern machine learning techniques to
-analyze real-world datasets and build interpretable models.
+I am a MSc Statistics student at IIT Kanpur interested in machine learning,
+data science and statistical modelling. I enjoy applying statistical theory
+to real-world datasets and building interpretable ML systems.
 </p>
-
-</section>
-
-<section id="education">
-
-<h2>Education</h2>
-
-<ul>
-
-<li>
-M.Sc Statistics — IIT Kanpur (2025–Present)
-</li>
-
-<li>
-B.Sc Statistics (Hons) — Fergusson College, Pune (2021–2024)
-</li>
-
-</ul>
 
 </section>
 
@@ -60,51 +62,31 @@ B.Sc Statistics (Hons) — Fergusson College, Pune (2021–2024)
 
 <h2>Projects</h2>
 
-<div class="project">
+<div class="projects">
+
+<div class="card" onclick="openPopup('rec')">
 
 <h3>OTT Recommendation System</h3>
 
-<p>
-Content-based recommendation system built using TF-IDF vectorization on the
-Netflix Titles dataset with cosine similarity for personalized recommendations.
-Includes FastAPI backend and interactive frontend.
-</p>
-
-<a href="https://github.com/Niraj-Mhatre2003/recommendation-systems">
-GitHub
-</a>
+<p>Content based Netflix recommendation system using TF-IDF.</p>
 
 </div>
 
-<div class="project">
+<div class="card" onclick="openPopup('stock')">
 
-<h3>Stock Market Volatility Analysis</h3>
+<h3>Stock Volatility Modeling</h3>
 
-<p>
-Studied the impact of macroeconomic indicators on stock market volatility using
-multivariate regression and GARCH(2,2) modeling with visualization through an
-interactive R Shiny dashboard.
-</p>
-
-<a href="https://github.com/Niraj-Mhatre2003/Stock-Market-Volatility-and-Macroeconomic-Indicators">
-GitHub
-</a>
+<p>Macroeconomic indicators impact using regression & GARCH.</p>
 
 </div>
 
-<div class="project">
+<div class="card" onclick="openPopup('aqi')">
 
-<h3>Air Quality Index Analysis</h3>
+<h3>AQI Analysis</h3>
 
-<p>
-Analyzed air pollution data from Pune Smart City using regression,
-correlation analysis, and robust estimation techniques including
-bootstrap confidence intervals.
-</p>
+<p>Regression analysis of Pune pollution data.</p>
 
-<a href="https://github.com/Niraj-Mhatre2003/Air-Quality-Index-Pune-city">
-GitHub
-</a>
+</div>
 
 </div>
 
@@ -112,22 +94,20 @@ GitHub
 
 <section id="skills">
 
-<h2>Technical Skills</h2>
+<h2>Skills</h2>
 
-<ul>
+<div class="skills">
 
-<li>Python</li>
-<li>R</li>
-<li>C++</li>
-<li>LaTeX</li>
-<li>Pandas</li>
-<li>Scikit-learn</li>
-<li>NumPy</li>
-<li>Matplotlib</li>
-<li>R Shiny</li>
-<li>FastAPI</li>
+<span>Python</span>
+<span>R</span>
+<span>C++</span>
+<span>Pandas</span>
+<span>Scikit-Learn</span>
+<span>FastAPI</span>
+<span>R Shiny</span>
+<span>Matplotlib</span>
 
-</ul>
+</div>
 
 </section>
 
@@ -140,17 +120,13 @@ GitHub
 <p>Phone: +91 9833260745</p>
 
 <p>
-GitHub:
-<a href="https://github.com/Niraj-Mhatre2003">
-github.com/Niraj-Mhatre2003
-</a>
-</p>
 
-<p>
-LinkedIn:
-<a href="https://www.linkedin.com/in/niraj-mhatre-08321821b">
-LinkedIn Profile
-</a>
+<a href="https://github.com/Niraj-Mhatre2003">GitHub</a>
+
+|
+
+<a href="https://www.linkedin.com/in/niraj-mhatre-08321821b">LinkedIn</a>
+
 </p>
 
 </section>
@@ -160,6 +136,18 @@ LinkedIn Profile
 <p>© 2026 Niraj Mhatre</p>
 
 </footer>
+
+<div id="popup" class="popup">
+
+<div class="popup-content">
+
+<span onclick="closePopup()" class="close">&times;</span>
+
+<div id="popup-text"></div>
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
