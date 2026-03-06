@@ -2,90 +2,133 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Niraj Mhatre</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<header>
+<header class="navbar">
 
-<div class="hero">
-
-<img src="profile.jpg" class="profile">
-
-<h1>Niraj Mhatre</h1>
-
-<p>MSc Statistics | IIT Kanpur | Data Science & ML</p>
-
-<div class="buttons">
-
-<a href="resume.pdf" class="btn">Download Resume</a>
-
-<a href="mailto:rmhatre25@iitk.ac.in" class="btn">Contact Me</a>
-
-</div>
-
-</div>
-
-</header>
+<div class="logo">Niraj</div>
 
 <nav>
 
 <a href="#about">About</a>
 <a href="#projects">Projects</a>
+<a href="#blog">Blog</a>
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
 
 </nav>
 
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Niraj Mhatre</h1>
+
+<p>MSc Statistics • IIT Kanpur  
+Machine Learning | Data Science | Statistical Modeling</p>
+
+<div class="buttons">
+
+<a href="resume.pdf" class="btn">Resume</a>
+
+<a href="https://github.com/Niraj-Mhatre2003" class="btn-outline">GitHub</a>
+
+</div>
+
+</div>
+
+<img src="profile.jpg" class="hero-img">
+
+</section>
+
 <section id="about">
 
-<h2>About Me</h2>
+<h2>About</h2>
 
 <p>
-I am a MSc Statistics student at IIT Kanpur interested in machine learning,
-data science and statistical modelling. I enjoy applying statistical theory
-to real-world datasets and building interpretable ML systems.
+
+I am a MSc Statistics student at IIT Kanpur with strong interests in
+machine learning, statistical modeling, and data science. My work focuses on
+building interpretable models and analyzing real-world datasets using both
+classical statistical techniques and modern ML approaches.
+
 </p>
 
 </section>
 
 <section id="projects">
 
-<h2>Projects</h2>
+<h2>Selected Projects</h2>
 
-<div class="projects">
+<div class="project-grid">
 
-<div class="card" onclick="openPopup('rec')">
+<div class="project-card">
 
 <h3>OTT Recommendation System</h3>
 
-<p>Content based Netflix recommendation system using TF-IDF.</p>
+<p>Content-based recommendation engine using TF-IDF and cosine similarity.</p>
+
+<a href="https://github.com/Niraj-Mhatre2003/recommendation-systems">View Project</a>
 
 </div>
 
-<div class="card" onclick="openPopup('stock')">
+<div class="project-card">
 
-<h3>Stock Volatility Modeling</h3>
+<h3>Stock Market Volatility</h3>
 
-<p>Macroeconomic indicators impact using regression & GARCH.</p>
+<p>Regression and GARCH modeling of macroeconomic indicators.</p>
+
+<a href="https://github.com/Niraj-Mhatre2003/Stock-Market-Volatility-and-Macroeconomic-Indicators">View Project</a>
 
 </div>
 
-<div class="card" onclick="openPopup('aqi')">
+<div class="project-card">
 
-<h3>AQI Analysis</h3>
+<h3>Air Quality Index Analysis</h3>
 
-<p>Regression analysis of Pune pollution data.</p>
+<p>Regression and robust statistical analysis of pollution data.</p>
 
+<a href="https://github.com/Niraj-Mhatre2003/Air-Quality-Index-Pune-city">View Project</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="blog">
+
+<h2>Blog</h2>
+
+<div class="blog-grid">
+
+<div class="blog-card">
+<h3>Robust Scaling Explained</h3>
+<p>Why median and IQR are better when outliers exist.</p>
+</div>
+
+<div class="blog-card">
+<h3>Understanding GARCH Models</h3>
+<p>A practical explanation of volatility clustering.</p>
+</div>
+
+<div class="blog-card">
+<h3>Building a Recommendation System</h3>
+<p>How TF-IDF and cosine similarity power recommendations.</p>
 </div>
 
 </div>
@@ -102,10 +145,11 @@ to real-world datasets and building interpretable ML systems.
 <span>R</span>
 <span>C++</span>
 <span>Pandas</span>
-<span>Scikit-Learn</span>
+<span>NumPy</span>
+<span>Scikit-learn</span>
 <span>FastAPI</span>
-<span>R Shiny</span>
 <span>Matplotlib</span>
+<span>R Shiny</span>
 
 </div>
 
@@ -117,13 +161,11 @@ to real-world datasets and building interpretable ML systems.
 
 <p>Email: rmhatre25@iitk.ac.in</p>
 
-<p>Phone: +91 9833260745</p>
+<p>Phone: +91-9833260745</p>
 
 <p>
 
-<a href="https://github.com/Niraj-Mhatre2003">GitHub</a>
-
-|
+<a href="https://github.com/Niraj-Mhatre2003">GitHub</a> |
 
 <a href="https://www.linkedin.com/in/niraj-mhatre-08321821b">LinkedIn</a>
 
@@ -136,18 +178,6 @@ to real-world datasets and building interpretable ML systems.
 <p>© 2026 Niraj Mhatre</p>
 
 </footer>
-
-<div id="popup" class="popup">
-
-<div class="popup-content">
-
-<span onclick="closePopup()" class="close">&times;</span>
-
-<div id="popup-text"></div>
-
-</div>
-
-</div>
 
 <script src="script.js"></script>
 
