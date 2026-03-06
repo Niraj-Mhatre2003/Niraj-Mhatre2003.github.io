@@ -13,53 +13,36 @@ background:#020617;
 }
 
 .navbar a{
-margin-left:20px;
-text-decoration:none;
 color:white;
+text-decoration:none;
+margin-left:20px;
 }
 
 .hero{
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:100px;
+align-items:center;
+padding:120px;
 }
 
 .hero-img{
-width:260px;
+width:240px;
 border-radius:50%;
 }
 
-.btn{
-background:#6366f1;
-padding:12px 24px;
-border-radius:6px;
-color:white;
-text-decoration:none;
-margin-right:10px;
-}
-
-.btn-outline{
-border:1px solid white;
-padding:12px 24px;
-border-radius:6px;
-text-decoration:none;
-color:white;
-}
-
 section{
-padding:80px 100px;
+padding:80px 120px;
 }
 
 .project-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:30px;
 }
 
 .project-card{
 background:#1e293b;
-padding:25px;
+padding:30px;
 border-radius:12px;
 transition:0.3s;
 }
@@ -71,21 +54,29 @@ transform:translateY(-10px);
 .blog-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:30px;
 }
 
 .blog-card{
 background:#1e293b;
-padding:25px;
+padding:30px;
 border-radius:12px;
 }
 
-.skills span{
-display:inline-block;
-background:#334155;
-padding:10px 20px;
-margin:10px;
-border-radius:20px;
+.btn{
+background:#6366f1;
+padding:12px 24px;
+border-radius:6px;
+color:white;
+text-decoration:none;
+}
+
+.btn-outline{
+border:1px solid white;
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+color:white;
 }
 
 footer{
@@ -93,3 +84,5 @@ text-align:center;
 padding:40px;
 background:#020617;
 }
+
+
