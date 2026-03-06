@@ -1,70 +1,81 @@
-/* DARK / LIGHT MODE */
+// typing animation
 
-const toggle = document.getElementById("themeToggle")
+const text = "Hi, I'm Niraj Mhatre";
+let i = 0;
 
-toggle.onclick = () => {
-document.body.classList.toggle("light-mode")
+function typeWriter(){
+
+if(i < text.length){
+
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+
+setTimeout(typeWriter,70);
+
 }
 
-/* PARTICLES BACKGROUND */
-
-particlesJS("particles-js", {
-particles: {
-number: {
-value: 80,
-density: {
-enable: true,
-value_area: 800
 }
-},
 
-color: {
-value: "#6366f1"
-},
+typeWriter();
 
-shape: {
-type: "circle"
-},
 
-opacity: {
-value: 0.5
-},
+// smooth scroll
 
-size: {
-value: 3
-},
+document.querySelectorAll("nav a").forEach(link=>{
 
-line_linked: {
-enable: true,
-distance: 150,
-color: "#6366f1",
-opacity: 0.4,
-width: 1
-},
+link.addEventListener("click",function(e){
 
-move: {
-enable: true,
-speed: 3
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href"))
+.scrollIntoView({behavior:"smooth"});
+
+});
+
+});
+
+
+// Galton board animation background
+
+const canvas = document.getElementById("galton");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<100;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*1,
+vy:(Math.random()-0.5)*1
+
+});
+
 }
-},
 
-interactivity: {
-events: {
-onhover: {
-enable: true,
-mode: "grab"
-}
-},
+function animate(){
 
-modes: {
-grab: {
-distance: 140,
-line_linked: {
-opacity: 1
-}
-}
-}
-},
+ctx.clearRect(0,0,canvas.width,canvas.height);
 
-retina_detect: true
-})
+particles.forEach(p=>{
+
+p.x+=p.vx;
+p.y+=p.vy;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,2,0,Math.PI*2);
+ctx.fillStyle="white";
+ctx.fill();
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();

@@ -4,94 +4,291 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Niraj Mhatre</title>
 
-<link rel="stylesheet" href="style.css">
+<title>Niraj Mhatre | AI & ML Engineer</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;800&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#02040a;
+--accent:#0ea5e9;
+--math-text:rgba(255,255,255,0.08);
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:'Plus Jakarta Sans',sans-serif;
+background:var(--bg);
+color:white;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(2,4,10,0.6);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+.logo{
+font-weight:800;
+font-size:20px;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:400;
+}
+
+.navbar a:hover{
+color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding-left:10%;
+background:linear-gradient(90deg,#02040a 0%,transparent 100%);
+}
+
+#typewriter{
+font-size:clamp(2rem,5vw,4rem);
+font-weight:800;
+margin:0;
+}
+
+.subtitle{
+margin-top:10px;
+color:rgba(255,255,255,0.5);
+max-width:500px;
+}
+
+/* MATH TEXT */
+
+.math-overlay{
+position:absolute;
+font-family:'Fira Code',monospace;
+color:var(--math-text);
+font-size:0.8rem;
+pointer-events:none;
+white-space:pre;
+}
+
+/* CANVAS */
+
+#canvas-container{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* SECTIONS */
+
+section{
+padding:120px 10%;
+max-width:1200px;
+margin:auto;
+}
+
+h2{
+font-size:32px;
+margin-bottom:30px;
+}
+
+/* SKILLS */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.skill{
+width:120px;
+height:120px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#1e293b;
+transition:0.4s;
+}
+
+.skill:hover{
+transform:translateY(-10px) scale(1.1);
+background:var(--accent);
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* CONTACT */
+
+.contact a{
+color:var(--accent);
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:rgba(255,255,255,0.4);
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- PARTICLES BACKGROUND -->
-<div id="particles-js"></div>
-
 <!-- NAVBAR -->
-<nav class="navbar">
 
-<div class="logo">Niraj</div>
+<div class="navbar">
 
-<div class="nav-links">
-<a href="#home">Home</a>
+<div class="logo">Niraj Mhatre</div>
+
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
-<a href="#blog">Blog</a>
 <a href="#contact">Contact</a>
-<button id="themeToggle">🌙</button>
 </div>
 
-</nav>
+</div>
+
+<!-- MATH OVERLAY -->
+
+<div class="math-overlay" style="top:10%;left:5%">φ(z)=(1/√2π)e^(-z²/2)</div>
+<div class="math-overlay" style="top:30%;right:5%">CLT: Zn=(X̄−μ)/(σ/√n)</div>
+<div class="math-overlay" style="bottom:20%;left:10%">J(θ)=½∑(hθ(x)-y)²</div>
+<div class="math-overlay" style="bottom:25%;right:10%">P(y|x)=P(x|y)P(y)/P(x)</div>
+
+<div id="canvas-container"></div>
 
 <!-- HERO -->
-<section id="home" class="hero">
 
-<div class="hero-text">
-<h1>Hi, I'm Niraj 👋</h1>
-<p>Machine Learning Student building cool AI & Web projects.</p>
+<section class="hero">
 
-<div class="buttons">
-<a href="#projects" class="btn">View Projects</a>
-<a href="#" class="btn-outline">Resume</a>
+<h1 id="typewriter"></h1>
+
+<div class="subtitle" id="sub-header"></div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>About</h2>
+
+<p>
+
+I'm <b>Niraj Mhatre</b>, an MSc Statistics student at IIT Kanpur interested in machine learning,
+statistical modeling and real-world data analysis.
+
+I enjoy building data driven systems using Python, R and modern ML libraries.
+
+</p>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2>Tools & Technologies</h2>
+
+<div class="skills">
+
+<div class="skill">Python</div>
+<div class="skill">R</div>
+<div class="skill">C++</div>
+<div class="skill">Pandas</div>
+<div class="skill">NumPy</div>
+<div class="skill">Scikit</div>
+<div class="skill">Matplotlib</div>
+<div class="skill">Jupyter</div>
+<div class="skill">GitHub</div>
+
 </div>
-
-</div>
-
-<img src="profile.jpg" class="hero-img">
 
 </section>
 
 <!-- PROJECTS -->
+
 <section id="projects">
 
 <h2>Projects</h2>
 
-<div class="project-grid">
+<div class="projects">
 
-<div class="project-card">
-<h3>ML Project</h3>
-<p>Machine learning model for prediction.</p>
-</div>
+<div class="card">
 
-<div class="project-card">
-<h3>Portfolio Website</h3>
-<p>Personal developer portfolio.</p>
-</div>
+<h3>OTT Recommendation System</h3>
 
-<div class="project-card">
-<h3>AI Tool</h3>
-<p>Experimental AI application.</p>
-</div>
+<p>Content based recommender using TF-IDF and cosine similarity.</p>
+
+<a href="https://github.com/Niraj-Mhatre2003/recommendation-systems.git">GitHub →</a>
 
 </div>
 
-</section>
+<div class="card">
 
-<!-- BLOG -->
-<section id="blog">
+<h3>Stock Volatility Modeling</h3>
 
-<h2>Blog</h2>
+<p>Regression and GARCH modeling on financial data.</p>
 
-<div class="blog-grid">
+<a href="https://github.com/Niraj-Mhatre2003/Stock-Market-Volatility-and-Macroeconomic-Indicators">GitHub →</a>
 
-<div class="blog-card">
-<h3>Learning Machine Learning</h3>
-<p>My journey into ML.</p>
 </div>
 
-<div class="blog-card">
-<h3>Building AI Projects</h3>
-<p>How I build ML apps.</p>
+<div class="card">
+
+<h3>Air Quality Index Analysis</h3>
+
+<p>Statistical analysis identifying key AQI drivers.</p>
+
+<a href="https://github.com/Niraj-Mhatre2003/Air-Quality-Index-Pune-city.git">GitHub →</a>
+
 </div>
 
 </div>
@@ -99,21 +296,136 @@
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
 
 <h2>Contact</h2>
-<p>Email: niraj@email.com</p>
+
+<div class="contact">
+
+<p>Email: rmhatre25@iitk.ac.in</p>
+
+<p>
+
+<a href="https://github.com/Niraj-Mhatre2003">GitHub</a> |
+<a href="https://www.linkedin.com/in/niraj-mhatre-08321821b">LinkedIn</a>
+
+</p>
+
+</div>
 
 </section>
 
 <footer>
-<p>© 2026 Niraj Mhatre</p>
+
+© 2026 Niraj Mhatre
+
 </footer>
 
-<!-- PARTICLES JS -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- MATTER JS -->
 
-<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+<script>
+
+/* TYPEWRITER */
+
+const text="Hi, I'm Niraj 👋"
+const sub="Machine Learning student building cool AI & Web projects."
+
+let i=0
+let j=0
+
+function typeMain(){
+if(i<text.length){
+document.getElementById("typewriter").innerHTML+=text.charAt(i)
+i++
+setTimeout(typeMain,80)
+}else{typeSub()}
+}
+
+function typeSub(){
+if(j<sub.length){
+document.getElementById("sub-header").innerHTML+=sub.charAt(j)
+j++
+setTimeout(typeSub,30)
+}
+}
+
+window.onload=typeMain
+
+/* GALTON BOARD */
+
+const {Engine,Render,Runner,Bodies,Composite}=Matter
+
+const engine=Engine.create({gravity:{y:1.2}})
+
+const w=window.innerWidth
+const h=window.innerHeight
+
+const render=Render.create({
+element:document.getElementById('canvas-container'),
+engine:engine,
+options:{width:w,height:h,wireframes:false,background:'transparent'}
+})
+
+Render.run(render)
+Runner.run(Runner.create(),engine)
+
+const rows=15
+const gapX=38
+const gapY=40
+const startY=h*0.15
+
+for(let r=0;r<rows;r++){
+for(let i=0;i<=r;i++){
+
+const x=w/2+(i*gapX)-(r*gapX/2)
+const y=startY+(r*gapY)
+
+Composite.add(engine.world,
+Bodies.circle(x,y,2.5,{isStatic:true,render:{fillStyle:'rgba(255,255,255,0.1)'}})
+)
+
+}
+}
+
+const binCount=24
+const binHeight=300
+
+for(let i=-binCount/2;i<=binCount/2;i++){
+
+const x=w/2+(i*gapX)
+
+Composite.add(engine.world,
+Bodies.rectangle(x,h-binHeight/2-20,1,binHeight,{isStatic:true})
+)
+
+}
+
+Composite.add(engine.world,
+Bodies.rectangle(w/2,h-20,w,10,{isStatic:true})
+)
+
+const palette=['#0ea5e9','#6366f1','#a855f7']
+
+function spawn(){
+
+const ball=Bodies.circle(w/2+(Math.random()*0.5-0.25),0,4,{
+restitution:0.2,
+friction:0.00001,
+render:{fillStyle:palette[Math.floor(Math.random()*palette.length)]}
+})
+
+Composite.add(engine.world,ball)
+
+setTimeout(()=>{Composite.remove(engine.world,ball)},80000)
+
+}
+
+setInterval(spawn,150)
+
+</script>
 
 </body>
 </html>
