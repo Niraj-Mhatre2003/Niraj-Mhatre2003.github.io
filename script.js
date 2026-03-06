@@ -1,46 +1,70 @@
-// typing animation
+/* DARK / LIGHT MODE */
 
-const text = "Hi, I'm Niraj Mhatre";
-let i = 0;
-
-function typeWriter(){
-
-if(i < text.length){
-
-document.getElementById("typing").innerHTML += text.charAt(i);
-i++;
-
-setTimeout(typeWriter,80);
-
-}
-
-}
-
-typeWriter();
-
-
-// smooth scroll
-
-document.querySelectorAll("nav a").forEach(link=>{
-
-link.addEventListener("click",function(e){
-
-e.preventDefault();
-
-document.querySelector(this.getAttribute("href"))
-.scrollIntoView({behavior:"smooth"});
-
-});
-
-});
-
-
-// dark mode toggle
-
-const toggle = document.getElementById("themeToggle");
+const toggle = document.getElementById("themeToggle")
 
 toggle.onclick = () => {
+document.body.classList.toggle("light-mode")
+}
 
-document.body.classList.toggle("light-mode");
+/* PARTICLES BACKGROUND */
 
-};
+particlesJS("particles-js", {
+particles: {
+number: {
+value: 80,
+density: {
+enable: true,
+value_area: 800
+}
+},
+
+color: {
+value: "#6366f1"
+},
+
+shape: {
+type: "circle"
+},
+
+opacity: {
+value: 0.5
+},
+
+size: {
+value: 3
+},
+
+line_linked: {
+enable: true,
+distance: 150,
+color: "#6366f1",
+opacity: 0.4,
+width: 1
+},
+
+move: {
+enable: true,
+speed: 3
+}
+},
+
+interactivity: {
+events: {
+onhover: {
+enable: true,
+mode: "grab"
+}
+},
+
+modes: {
+grab: {
+distance: 140,
+line_linked: {
+opacity: 1
+}
+}
+}
+},
+
+retina_detect: true
+})
