@@ -247,7 +247,7 @@
             <div class="tag-row">
                 <span class="tag">#python</span><span class="tag">#NLP</span><span class="tag">#FastAPI</span><span class="tag">#Recommendation</span>
             </div>
-            <a href="https://github.com/Niraj-Mhatre2003" class="project-link">View Project on GitHub →</a>
+            <a href="https://github.com/Niraj-Mhatre2003/recommendation-systems.git" class="project-link">View Project on GitHub →</a>
         </div>
 
         <div class="project-card">
@@ -257,7 +257,7 @@
             <div class="tag-row">
                 <span class="tag">#R</span><span class="tag">#GARCH</span><span class="tag">#Shiny</span><span class="tag">#Finance</span>
             </div>
-            <a href="https://github.com/Niraj-Mhatre2003" class="project-link">View Project on GitHub →</a>
+            <a href="https://github.com/Niraj-Mhatre2003/Stock-Market-Volatility-and-Macroeconomic-Indicators" class="project-link">View Project on GitHub →</a>
         </div>
 
         <div class="project-card">
@@ -267,7 +267,7 @@
             <div class="tag-row">
                 <span class="tag">#python</span><span class="tag">#statistics</span><span class="tag">#regression</span><span class="tag">#bootstrap</span>
             </div>
-            <a href="https://github.com/Niraj-Mhatre2003" class="project-link">View Project on GitHub →</a>
+            <a href="hhttps://github.com/Niraj-Mhatre2003/Air-Quality-Index-Pune-city.git" class="project-link">View Project on GitHub →</a>
         </div>
     </section>
 
@@ -298,7 +298,23 @@
             </p>
         </div>
     </section>
-
+    <div id="normal-display" style="
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    font-family:'Fira Code', monospace;
+    font-size:13px;
+    background:rgba(2,6,23,0.6);
+    padding:10px 14px;
+    border-radius:10px;
+    color:#34d399;
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    z-index:999;">
+    μ = <span id="mu">0</span><br>
+    σ = <span id="sigma">1</span>
+    </div>
+            
     <footer>
         <p style="font-weight: 800; color: var(--text-main); font-size: 1.2rem; margin-bottom: 10px;">Niraj Mhatre</p>
         <p style="margin-bottom: 25px;">M.Sc. Statistics Student at IIT Kanpur</p>
@@ -353,6 +369,28 @@
             setTimeout(()=>{Composite.remove(engine.world,poly)},50000);
         }
         setInterval(spawn,200);
+
+function updateNormal(){
+    const bodies = Composite.allBodies(engine.world).filter(b => !b.isStatic);
+
+    if(bodies.length < 10) return;
+
+    const xs = bodies.map(b => b.position.x);
+
+    const mean = xs.reduce((a,b)=>a+b,0)/xs.length;
+
+    const variance = xs.reduce((s,x)=>s+(x-mean)*(x-mean),0)/xs.length;
+
+    const sigma = Math.sqrt(variance);
+
+    document.getElementById("mu").innerText =
+        ((mean/w)*10-5).toFixed(2);
+
+    document.getElementById("sigma").innerText =
+        (sigma/100).toFixed(2);
+}
+
+setInterval(updateNormal,500);
     </script>
 </body>
 </html>
